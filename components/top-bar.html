@@ -33,15 +33,7 @@
         <!-- Right Nav Section -->
         <ul class="right">
           <li class="divider"></li>
-          <li><a href="/grid.php">Features</a></li>
-          <li class="divider"></li>
-          <li><a href="/templates.php">Add-ons</a></li>
-          <li class="divider"></li>
-          <li><a href="/case-jacquelinewest.php">Case Studies</a></li>
-          <li class="divider"></li>
-          <li><a href="/docs/">Docs</a></li>
-          <li class="divider"></li>
-          <li><a href="/training.php">Training</a></li>
+
           <li class="divider"></li>
           <li class="has-form">
             <a href="http://foundation.zurb.com/docs" class="button">Getting Started</a>
@@ -858,20 +850,6 @@
 
     <script>
 
-      // Google Analytics
-      var _gaq = _gaq || [];
-      _gaq.push(
-        ['_setAccount', 'UA-2195009-2'],
-        ['_trackPageview'],
-        ['b._setAccount', 'UA-2195009-27'],
-        ['b._trackPageview']
-      );
-
-      (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-      })();
 
       document.write('<script src="/foundation-sites/assets/vendor/'
         + ('__proto__' in {} ? 'zepto' : 'jquery')
@@ -883,26 +861,6 @@
       $(document)
       
         .foundation();
-      
-
-      $.ajax({
-        url: '//zurb.com/jobs/widgets/jobs.json?limit=3',
-        dataType: 'jsonp',
-        success: function(data) {
-          var list = $("<ul></ul>");
-          $.each(data.jobs, function(idx, job) {
-            var item = "<li><a href='"+job.url+"' target='_blank'>" +
-              "<span class='positionTitle'>"+job.title+"</span>" +
-              "<span class='location'><span class='companyName'>"+job.company_name+"</span> in "+job.location+"</span>" +
-              "</a>" +
-              "</li>";
-            list.append(item);
-          });
-            // Customize This
-          $("#zurbJobsWidget").html(list);
-        }
-      });
-
       // For Kitchen Sink Page
       $('#start-jr').on('click', function() {
         $(document).foundation('joyride','start');
